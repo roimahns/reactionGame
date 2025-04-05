@@ -1,0 +1,11 @@
+{
+  "name": "reaction-game",
+  "version": "1.0.0",
+  "description": "A reaction and aiming game",
+  "scripts": {
+    "dev": "live-server --port=8000"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+} 

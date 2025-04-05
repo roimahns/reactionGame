@@ -1,0 +1,221 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    color: white;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.menu-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+}
+
+.menu-container h1 {
+    font-size: 3em;
+    margin-bottom: 40px;
+    color: #4CAF50;
+    text-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+}
+
+.difficulty-selector {
+    text-align: center;
+}
+
+.difficulty-selector h2 {
+    font-size: 1.8em;
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+.difficulty-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.difficulty-btn {
+    padding: 15px 40px;
+    font-size: 1.3em;
+    background: linear-gradient(45deg, #4CAF50, #45a049);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+.difficulty-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+}
+
+.game-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.stats {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 20px;
+    font-size: 1.5em;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 15px 25px;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+}
+
+.controls {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 15px 25px;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.control-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.control-group label {
+    min-width: 150px;
+}
+
+.control-group input[type="range"] {
+    width: 150px;
+    height: 5px;
+    background: #4CAF50;
+    border-radius: 5px;
+    outline: none;
+    -webkit-appearance: none;
+}
+
+.control-group input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.control-group span {
+    min-width: 60px;
+    text-align: right;
+}
+
+#game-area {
+    width: 100vw;
+    height: 100vh;
+    background-color: #1a1a1a;
+    position: relative;
+}
+
+.target {
+    position: absolute;
+    background: radial-gradient(circle at 30% 30%, #ff6b6b, #ff4444);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 0 20px rgba(255, 68, 68, 0.5);
+    animation: pulse 1s linear infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 20px rgba(255, 68, 68, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(255, 68, 68, 0.8);
+    }
+    100% {
+        box-shadow: 0 0 20px rgba(255, 68, 68, 0.5);
+    }
+}
+
+.target:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(255, 68, 68, 0.8);
+}
+
+#start-button {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 40px;
+    font-size: 1.3em;
+    background: linear-gradient(45deg, #4CAF50, #45a049);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+    z-index: 100;
+}
+
+#start-button:hover {
+    transform: translateX(-50%) scale(1.05);
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+}
+
+#start-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: translateX(-50%);
+}
+
+.menu-button {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    padding: 15px 40px;
+    font-size: 1.3em;
+    background: linear-gradient(45deg, #ff4444, #ff6b6b);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(255, 68, 68, 0.3);
+    z-index: 100;
+}
+
+.menu-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(255, 68, 68, 0.4);
+} 
